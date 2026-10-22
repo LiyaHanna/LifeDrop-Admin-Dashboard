@@ -166,7 +166,7 @@ class FirebaseService {
     await requestsCollection.doc(requestId).update({
       'status': status,
       'updatedAt': FieldValue.serverTimestamp(),
-      'completedAt': status == 'completed' ? FieldValue.serverTimestamp() : null,
+      'fulfilledAt': status == 'fulfilled' ? FieldValue.serverTimestamp() : null,
     });
   }
 

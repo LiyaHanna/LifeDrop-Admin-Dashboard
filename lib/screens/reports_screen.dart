@@ -272,7 +272,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
     final colorMap = {
       'pending': Colors.orange,
       'approved': Colors.blue,
-      'completed': Colors.green,
+      'fulfilled': Colors.green,
       'cancelled': Colors.red,
       'expired': Colors.grey,
     };

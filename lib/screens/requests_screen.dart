@@ -78,7 +78,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
                     DropdownMenuItem(value: 'all', child: Text('All Requests')),
                     DropdownMenuItem(value: 'pending', child: Text('Pending')),
                     DropdownMenuItem(value: 'approved', child: Text('Approved')),
-                    DropdownMenuItem(value: 'completed', child: Text('Completed')),
+                    DropdownMenuItem(value: 'fulfilled', child: Text('Fulfilled')),
                     DropdownMenuItem(value: 'cancelled', child: Text('Cancelled')),
                     DropdownMenuItem(value: 'expired', child: Text('Expired')),
                   ],

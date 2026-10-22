@@ -7,7 +7,7 @@ class RequestData {
   final String patientName;
   final String bloodType;
   final int quantity;
-  final String status; // Possible values: 'pending', 'approved', 'completed', 'cancelled', 'expired'
+  final String status; // Possible values: 'pending', 'approved', 'fulfilled', 'cancelled', 'expired'
   final String urgency; // Possible values: 'low', 'medium', 'high', 'critical'
   final String? hospitalId;
   final String? hospitalName;
@@ -19,7 +19,7 @@ class RequestData {
   final DateTime createdAt;
   final DateTime? updatedAt;
   final DateTime? scheduledAt;
-  final DateTime? completedAt;
+  final DateTime? fulfilledAt;
 
   RequestData({
     required this.id,
@@ -39,7 +39,7 @@ class RequestData {
     required this.createdAt,
     this.updatedAt,
     this.scheduledAt,
-    this.completedAt,
+    this.fulfilledAt,
   });
 
   /// Creates a [RequestData] instance from a Firestore document snapshot.
@@ -62,7 +62,7 @@ class RequestData {
       createdAt: (data['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now(),
       updatedAt: (data['updatedAt'] as Timestamp?)?.toDate(),
       scheduledAt: (data['scheduledAt'] as Timestamp?)?.toDate(),
-      completedAt: (data['completedAt'] as Timestamp?)?.toDate(),
+      fulfilledAt: (data['fulfilledAt'] as Timestamp?)?.toDate(),
     );
   }
 
@@ -73,7 +73,7 @@ class RequestData {
         return 'orange';
       case 'approved':
         return 'blue';
-      case 'completed':
+      case 'fulfilled':
         return 'green';
       case 'cancelled':
         return 'red';
